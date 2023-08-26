@@ -1,5 +1,7 @@
 package com.rt.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -92,6 +94,28 @@ public class Homecontroller {
 	StudentEntity s=	service.deleteyBId(id);
 	System.out.println("deleted sucess full");
 		return "Deleted Sucess Full";
+		
+	}
+	
+	
+//	------------ findall ------------------------------------------------
+	
+	@GetMapping("std/all")
+	public List<StudentEntity> AllData() {
+	List<StudentEntity> list=	service.AllData();
+	
+		return list;
+		
+	}
+	
+	
+//	------------data findbyname custom query ------------------------------------------------
+	
+	@GetMapping("std/name/{name}")
+	public List<StudentEntity>  stdByName(@PathVariable String name) {
+		List<StudentEntity> list=	service.stdByName(name);
+	
+		return list;
 		
 	}
 
