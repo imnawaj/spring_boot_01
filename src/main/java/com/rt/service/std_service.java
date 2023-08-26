@@ -1,5 +1,6 @@
 package com.rt.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,16 @@ public class std_service {
 	public StudentEntity deleteyBId(int id) {
 		dao.deleteById(id);
 		return null;
+	}
+
+	public List<StudentEntity> AllData() {
+		List<StudentEntity> list = dao.findAll();
+		return list;
+	}
+
+	public List<StudentEntity> stdByName(String name) {
+		List<StudentEntity> list= dao.findByName(name);
+		return list;
 	}
 
 }
