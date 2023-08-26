@@ -47,4 +47,9 @@ public class std_service {
 		return list;
 	}
 
+	public List<StudentEntity> StudentByName(String name) {
+		List<StudentEntity> list= dao.findByName(name);
+		return list;
+	}
+
 }

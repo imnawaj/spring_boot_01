@@ -118,5 +118,15 @@ public class Homecontroller {
 		return list;
 		
 	}
+	
+//	------------data findbyname custom jpql query ------------------------------------------------
+	
+	@GetMapping("student/name/{name}")
+	public List<StudentEntity>  StudentByName(@PathVariable String name) {
+		List<StudentEntity> list=	service.StudentByName(name);
+	
+		return list;
+		
+	}
 
 }
